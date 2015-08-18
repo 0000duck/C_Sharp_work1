@@ -1,0 +1,14 @@
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\bin\Release\TestSndMsg.exe
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\bin\Release\TestSndMsg.pdb
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.Form1.resources
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.exe
+C:\Users\Public\work\Cシャープ\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.exe
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\bin\Release\TestSndMsg.exe
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\bin\Release\TestSndMsg.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.Form1.resources
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.Properties.Resources.resources
+C:\Users\kitt\Desktop\C_Sharp_work1\TestSndMsg\TestSndMsg\obj\x86\Release\TestSndMsg.csproj.GenerateResource.Cache
