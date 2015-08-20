@@ -1,0 +1,33 @@
+
+この Project について (概要) 
+
+	MyEventQueue クラス
+		Queue
+		ManualResetEvent
+		Semaphore
+		を使用して、Eventで動作し、Queueで情報を取得するクラス
+		
+		使用時は 本クラス Object生成後、
+		InitProc() をはじめに使用する必要があります。
+		また、本クラス使用終了時には、
+		EndProc() を使用する必用があります。
+
+	Form1 クラス
+		Initボタン("Start Thread") を押すと
+		スレッド"ThreadFunction()"を起動し
+		MyEventQueue クラスを生成します。
+		スレッドは EventQueue待ちになります。
+		
+		button1("msg5") を押すと スレッドに "cmd5"を送ります。
+		スレッドは"cmd5"を受信して、"cmd5"とわかると MsgBox を表示します。
+
+		button2("msg6") を押すと スレッドに "cmd6"を送ります。
+		スレッドは"cmd6"を受信して、"cmd6"とわかると MsgBox を表示します。
+
+		button3("End Thrad and Exit") を押すと スレッドに "End"を送ります。
+		スレッドは "End"を受信して、"End"とわかると MsgBox を表示し
+		OKをおされたら、スレッドを終了します。
+
+
+以上です。
+
