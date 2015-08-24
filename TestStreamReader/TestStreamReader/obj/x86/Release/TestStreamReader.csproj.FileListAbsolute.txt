@@ -1,0 +1,14 @@
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\bin\Release\TestStreamReader.exe
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\bin\Release\TestStreamReader.pdb
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.Form1.resources
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.exe
+C:\Users\Public\work\Cシャープ\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.exe
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\bin\Release\TestStreamReader.exe
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\bin\Release\TestStreamReader.pdb
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.Form1.resources
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.Properties.Resources.resources
+C:\Users\kitt\Desktop\C_Sharp_work1\TestStreamReader\TestStreamReader\obj\x86\Release\TestStreamReader.csproj.GenerateResource.Cache
