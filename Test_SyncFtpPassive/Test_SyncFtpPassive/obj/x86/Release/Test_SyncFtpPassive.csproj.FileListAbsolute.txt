@@ -1,0 +1,8 @@
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\bin\Release\Test_SyncFtpPassive.exe
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\bin\Release\Test_SyncFtpPassive.pdb
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.Form1.resources
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.exe
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.pdb
+C:\Users\Public\work\Cシャープ\Test_SyncFtpPassive\Test_SyncFtpPassive\obj\x86\Release\Test_SyncFtpPassive.csprojResolveAssemblyReference.cache
