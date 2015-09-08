@@ -1,0 +1,8 @@
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\bin\Release\TestSingletone.exe
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\bin\Release\TestSingletone.pdb
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.Form1.resources
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.exe
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.pdb
+C:\Users\Public\work\Cシャープ\TestSingletone\TestSingletone\obj\x86\Release\TestSingletone.csprojResolveAssemblyReference.cache
