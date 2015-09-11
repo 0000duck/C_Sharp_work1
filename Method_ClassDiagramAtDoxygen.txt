@@ -1,0 +1,64 @@
+
+
+	doxygen を使用して、クラス図を表示する方法
+
+								2015.09.11
+
+doxygen はインストールされているのを前提に
+graphviz をインストールして、doxygenでクラス図を表示する
+手順を以下にまとめます。
+
+
+doxygenは、自力でグラフ画像の生成することはできないらしく
+graphviz を使用して、図を表示できるそうです。
+
+
+1. graphviz インストール
+	以下の URL で Windows用の graphviz を downloadします。
+
+	http://www.graphviz.org/Download_windows.php
+	
+	この文書作成時は、graphviz-2.38.msi を Downloadし
+	ダブルクリックで Install しました。
+
+
+2. Path設定
+	[コンピュータ] → [プロパティ] → [システムの詳細設定] を選択。
+	"システムのプロパティ"Form の [環境変数]ボタンを押して
+	"環境変数" Form のPATH を選び、
+	変数地に doxygen と graphviz の Path を設定
+
+	以下 例
+	"...C:\Program Files\doxygen\bin;C:\Program Files (x86)\Graphviz2.38\bin;"
+
+
+
+3. Doxyfile作成と編集
+	Dos窓を起動し
+	Doxygen に書けるソースのあるフォルダに移動。
+	ここで、"doxygen -g"実行。
+	Doxyfile が生成されるので、エディタで開き
+	以下のパラメータを変更
+	
+	HAVE_DOT               = YES
+	DOT_PATH               = C:\Program Files (x86)\Graphviz2.38\bin
+	SOURCE_BROWSER         = YES
+	CALL_GRAPH             = YES
+	CALLER_GRAPH           = YES
+	
+	DOT_PATH は、今回 graphviz をインストールした Path を設定
+
+
+
+4. doxygen 実行と クラス図表示
+	先のDos窓上で、"doxygen"実行
+	"finished..."
+	と表示されたら doxygen を実行したフォルダ内の htmlフォルダに
+	index.html ができているので、これをブラウザで確認。
+	
+	Classes → ClassHirearchy を選択すると 全体のクラス図が表示される。
+	
+	
+	
+
+以上です。
