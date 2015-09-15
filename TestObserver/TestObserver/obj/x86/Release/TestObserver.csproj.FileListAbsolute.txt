@@ -1,0 +1,10 @@
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\bin\Release\TestObserver.exe
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\bin\Release\TestObserver.pdb
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.Form1.resources
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.Form2.resources
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.Form3.resources
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.exe
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.pdb
+C:\Users\Public\work\Cシャープ\TestObserver\TestObserver\obj\x86\Release\TestObserver.csprojResolveAssemblyReference.cache
