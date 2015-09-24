@@ -7,3 +7,4 @@
 	TestLogFile：独自LogFile作成クラスMyLog の SampleProject
 	Method_ClassDiagramAtDoxygen.txt：doxygen で graphviz を使用して Class図を表示する方法
 	TestObserver：独自理解 Observerパターン Sample Project
+	TestFactoryMethod：FactoryMethodパターン Sample Project
