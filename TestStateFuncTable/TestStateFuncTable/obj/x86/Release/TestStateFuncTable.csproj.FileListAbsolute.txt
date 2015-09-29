@@ -1,0 +1,8 @@
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\bin\Release\TestStateFuncTable.exe
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\bin\Release\TestStateFuncTable.pdb
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.Form1.resources
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.exe
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.pdb
+C:\Users\Public\work\Cシャープ\TestStateFuncTable\TestStateFuncTable\obj\x86\Release\TestStateFuncTable.csprojResolveAssemblyReference.cache
