@@ -9,3 +9,4 @@
 	TestObserver：独自理解 Observerパターン Sample Project
 	TestFactoryMethod：FactoryMethodパターン Sample Project
 	Change README.md for Test.
+	AddNew TestStateFuncTable : FunctionTable Sample Project.
