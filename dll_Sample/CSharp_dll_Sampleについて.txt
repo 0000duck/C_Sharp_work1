@@ -1,0 +1,78 @@
+
+C# dll Sampleについて
+									2015.09.29
+
+TestClassLibrary_MsgBox1 : MsgBoxを表示するだけのテスト用dll
+TestStaticDll : MsgBox を表示する dll を静的、動的 でリンクした Sample Project
+
+
+TestClassLibrary_MsgBox1
+	クラスライブラリ template で project作成
+	MessageBox 使いたいので、
+	ソリューションエクスプローラの [参照設定] 右クリック、
+	"参照の追加"→".NET"タグで選択し
+	"using System.Windows.Forms;" を追加。
+
+	"Class1" を "MyMsgBox" に変更。
+	void ShowMyMsgBox(string msg) Method を実装。
+
+	コンパイル。
+
+TestStaticDll
+	Windows フォームアプリケーション template で project作成
+	Form[デザイン] で button1 と button2 追加
+	
+	ソリューションエクスプローラの [参照設定] 右クリック、
+	"参照の追加"→".NET"タグで選択し
+	"C:\XXX\TestClassLibrary_MsgBox1\TestClassLibrary_MsgBox1\bin\Release\TestClassLibrary_MsgBox1.dll" を追加。
+	( XXXは、自分で作成したPath )
+	これで静的リンクの準備
+
+	"using TestClassLibrary_MsgBox1;"	記述追加
+	"using System.Reflection;"			記述追加
+
+	button1 は静的リンク、 button2 は動的リンクで、TestClassLibrary_MsgBox1.dll 読み込み。
+	MyMsgBoxクラスの ShowMyMsgBox を使用して dllの Methodを使用する。
+
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        MyMsgBox mymsgbox = new MyMsgBox();
+        mymsgbox.ShowMyMsgBox("Test Message1!!");
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        var asm = Assembly.LoadFrom("C:\\XXX\\TestClassLibrary_MsgBox1\\TestClassLibrary_MsgBox1\\bin\\Release\\TestClassLibrary_MsgBox1.dll");
+        var typeInfo = asm.GetType("TestClassLibrary_MsgBox1.MyMsgBox");
+        dynamic dy = Activator.CreateInstance(typeInfo);
+        dy.ShowMyMsgBox("Test Message2!!");
+
+    }
+
+
+	TestClassLibrary_MsgBox1 の Project を TestStaticDll の Projectに追加して
+	動作させる方法もあります。
+
+
+
+・dll側のデバッグ方法。
+	TestClassLibrary_MsgBox1 の Project で
+	[プロジェクト]→"TestClassLibrary_MsgBox1" を選択
+	"TestClassLibrary_MsgBox1" タグが開かれるので、左にある "デバッグ" を押す。
+	"開始動作"を "スタートプロジェクト"から"外部プログラムの開始"に変更。[...]を押して
+
+	dll呼び出し側のProject の exe を指定する。
+	"C:\XXX\TestStaticDll\TestStaticDll\bin\Debug\TestStaticDll.exe"
+
+	ShowMyMsgBox()内の次の行に breakポイントを置く。
+
+	デバッグで開始すると、TestStaticDll の Form1 が起動するので
+	button1 or 2 を押すと、	ShowMyMSgBox()内で breakします。
+	
+	以上で、dll側もデバッグできます。
+
+
+以上です。
+
+

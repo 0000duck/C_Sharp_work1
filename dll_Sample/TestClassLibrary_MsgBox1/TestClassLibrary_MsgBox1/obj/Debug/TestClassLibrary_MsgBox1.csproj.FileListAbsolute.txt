@@ -1,0 +1,4 @@
+C:\Users\Public\work\Cシャープ\TestClassLibrary_MsgBox1\TestClassLibrary_MsgBox1\bin\Debug\TestClassLibrary_MsgBox1.dll
+C:\Users\Public\work\Cシャープ\TestClassLibrary_MsgBox1\TestClassLibrary_MsgBox1\bin\Debug\TestClassLibrary_MsgBox1.pdb
+C:\Users\Public\work\Cシャープ\TestClassLibrary_MsgBox1\TestClassLibrary_MsgBox1\obj\Debug\TestClassLibrary_MsgBox1.dll
+C:\Users\Public\work\Cシャープ\TestClassLibrary_MsgBox1\TestClassLibrary_MsgBox1\obj\Debug\TestClassLibrary_MsgBox1.pdb

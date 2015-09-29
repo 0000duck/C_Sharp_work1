@@ -1,0 +1,9 @@
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\bin\Debug\TestStaticDll.exe
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\bin\Debug\TestStaticDll.pdb
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\bin\Debug\TestClassLibrary_MsgBox1.dll
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\bin\Debug\TestClassLibrary_MsgBox1.pdb
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\obj\x86\Debug\TestStaticDll.Form1.resources
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\obj\x86\Debug\TestStaticDll.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\obj\x86\Debug\TestStaticDll.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\obj\x86\Debug\TestStaticDll.exe
+C:\Users\Public\work\Cシャープ\TestStaticDll\TestStaticDll\obj\x86\Debug\TestStaticDll.pdb
