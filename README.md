@@ -11,3 +11,4 @@
 	Change README.md for Test.
 	AddNew TestStateFuncTable : FunctionTable Sample Project.
 	dll_Sample : Test Static and Dynamic dll. include dll and use_side project.
+	AddNew TestStatePattern : Test State Pattern Sample Project
