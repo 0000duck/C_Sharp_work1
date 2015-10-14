@@ -12,3 +12,5 @@
 	AddNew TestStateFuncTable : FunctionTable Sample Project.
 	dll_Sample : Test Static and Dynamic dll. include dll and use_side project.
 	AddNew TestStatePattern : Test State Pattern Sample Project
+	AddNew TestUDP Rcv : Test UdpClien Receive Sample Project
+	AddNew TestUDP Snd : Test UdpClien Snd Sample Project
