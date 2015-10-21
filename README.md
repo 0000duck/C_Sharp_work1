@@ -14,3 +14,4 @@
 	AddNew TestStatePattern : Test State Pattern Sample Project
 	AddNew TestUDP Rcv : Test UdpClien Receive Sample Project
 	AddNew TestUDP Snd : Test UdpClien Snd Sample Project
+	AddNew TestDataGrid and TestDelegateTokumeiRamda : DataGridView and Delegate,TokumeiMethod, RamdaFormula Sample Project.
