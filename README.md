@@ -15,3 +15,8 @@
 	AddNew TestUDP Rcv : Test UdpClien Receive Sample Project
 	AddNew TestUDP Snd : Test UdpClien Snd Sample Project
 	AddNew TestDataGrid and TestDelegateTokumeiRamda : DataGridView and Delegate,TokumeiMethod, RamdaFormula Sample Project.
+	AddNew TestMDI : Multiple Document Interface Sample Project
+	AddNew TestMonitor : Monitor Sample Project
+	AddNew TestService1 : Windows Service Sample Project
+	AddNew TestTcpClient : TcpClient Sample Project
+	AddNew TestTcpSrvSample : TcpListener Sample Project

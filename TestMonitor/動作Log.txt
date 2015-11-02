@@ -1,0 +1,242 @@
+スレッド 'vshost.LoadReference' (0x2bdc) はコード 0 (0x0) で終了しました。
+'TestMonitor.vshost.exe' (マネージ (v4.0.30319)): 'C:\Users\Public\work\Cシャープ\TestMonitor\TestMonitor\bin\Debug\TestMonitor.exe が読み込まれました。シンボルが読み込まれました。
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+// 10個目
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+// 11個目
+SetReq Enter.
+SetReq Wait.
+
+GetReq Enter.
+GetReq PulseAll.	// 1個目 Get
+GetReq Exit.
+
+SetReq PulseAll.
+SetReq Exit.		// 11個目 Set抜け
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 2個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 3個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 4個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 5個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 6個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 7個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 8個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 9個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 10個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq PulseAll.	// 11個目 Get
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+GetReq Wait.		// 12個目 Get待ち
+
+
+SetReq Enter.
+SetReq PulseAll.
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+
+SetReq Enter.
+
+SetReq PulseAll.
+
+SetReq Exit.
+
+GetReq PulseAll.
+
+GetReq Exit.
+
+CMD2
+GetReq Enter.
+
+GetReq Wait.
+

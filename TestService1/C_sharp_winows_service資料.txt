@@ -1,0 +1,75 @@
+//	C#_winows_service資料
+
+
+1. Project作成
+	 Windowsサービス Project で開始
+
+2. インストーラ追加
+	Service1.cs[デザイン] ができるので
+	プロパティで "インストーラーの追加"を選択
+	(選択が見え会い場合は、 
+	Service1 プロパティWindow上で右クリックし、"コマンド" を選択すると
+	 "インストーラー" 追加が見える
+
+	ProjectInstaller.cs[デザイン] tag ができ、
+		serviceProcessInstaller1
+		serviceInstaller1
+	が作成される
+
+3. インストーラに名前追加
+	serviceInstaller1 プロパティの
+		Description, DisplayName, ServiceName 設定
+		例：みな "TestService1"とした。同じ名前が良いみたい
+
+	serviceProcessInstaller1 プロパティの
+		Account を LocalSystem に変更。		
+		変更することで、Dos窓で installUtil.exe 実行時、Login/Password入力しなくてすむ。
+
+
+4. インストール
+	Projectの[プロパティ]の"ビルド"のプラットフォームターゲットを"Any CPU"か"x64"にする。
+	今回は"Any CPU"にした。
+
+	VisualStadio の Dos窓起動。(VS2008 コマンドプロンプトのノーマルを使った。）
+
+	作成した Project の exe があるフォルダへ移動
+	"installUtil TestService1.exe" を入力 (今回作成した Service名が "TestSerice1")
+	"トランザクション　インストールが完了しました。"と表示されればＯＫ
+	[コンピュータの管理]→ "サービスとアプリケーション"の
+	"サービス"に Service名が あればインストール成功
+
+	＊アンインストールは、"installUtil /u [install時のexeのFullPath]" で削除
+
+
+5. デバッグ
+	ソースの void OnStart(string[] args) 内に
+	"System.Diagnostics.Debugger.Launch();" の記述追加
+	（↑★上記記述ないと OnStart()にBreakポイント張っても止まらない。
+		サービス開始した時点で動作していて、その後、アタッチするため、とおり過ぎているとのこと）
+
+	"コンピュータの管理"で"サービスとアプリケーション"で"サービス"を選び、
+	インストールしたサービス開始後、
+	デバッグのプロセスアタッチで　"すべてのユーザからのプロセス表示"を選択し
+	インストールしたサービスを選択。
+	OnStart()以降に Break貼ってあればとまる。
+
+
+	EventLog について
+		OnStart() に eventLog1.WriteEntry() を記載していたが、eventLog1 の プロパティの "source" に
+		何も書いてなかったのでエラーがおきて、すぐ、サービスが停止してしまった。
+		"TestService1"と書いたらエラーなく動作し、EventLog も出力できた。
+
+		Log確認は
+		"コンピュータの管理" → "イベントビューアー" → "Windowsログ" → 
+		"アプリケーション"　右側のWindow"ソース"の覧、 TestSercice1_LogEv を確認
+
+＊.memo
+	timerについて
+	WinowsForm の Timer は、仕様できない。
+
+	"ツールボックス"の空いている箇所を右クリック→「アイテムの選択」
+	→「.NET Framework コンポーネント」で「System.Timers」を追加
+	一番下に "Timer"が追加されるので、それを
+	"Service1[デザイン]"に追加
+
+以上です。
