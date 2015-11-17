@@ -1,0 +1,67 @@
+//-----------------------------------------------------
+//
+//	TestWpfMvvmModelTask	について
+//
+//									2015.11.11
+//-----------------------------------------------------
+・概要
+	本Project は WPF で開始し、
+	MVVM の概念を取り入れて実装しています。
+	
+	勉強のために作成したので、正しい MVVM とは
+	限らないのでご注意ください。
+
+
+・仕様
+	Startボタンを押すと、 EXE1 に遷移し、2秒後に、EXE2 に遷移し
+	Timerで 5秒後、IDLE に戻ります。
+	どの状態でも Abortボタンを押すと IDLE に戻ります。
+	×ボタンで、CenterTaskを終了し、アプリケーションを終了します。
+
+
+・MVVM
+	MVVM を以下のようにわけました
+
+	View
+		MainWindow.xaml	：画面構成
+		MainWindow.cs	：画面の Instance時処理。
+	
+	ViewModel
+		MainViewModel.cs	：Viewとの結合処理。 ICommand、INotifyChaned実装
+							　Model の Object もここで生成。(←この設計が良いかは？)
+	
+	Model
+		MainModel.cs		：Model処理。 Task(スレッド)で、中心の状態遷移を管理
+
+
+・View と ViewModelの関係
+	Startボタン → StartCommand
+	Abortボタン → AbortCommand
+	State表示用 TextBox ← NotifyPropertyChanged("CurrenState");
+	Window_Closing → EndProc
+
+
+・実装時の注意点
+		×ボタンは  Window_Closing 追加
+		MainWindow.xaml で、ソース内の "<Window ..." をクリックした時点で
+		プロパティが "Window"になるので　稲妻マーク押して、 Closing をダブルクリックして
+		Window_Closing 追加した。
+		また、
+		Start/Abort、TextBox の Bind は、
+		<Window.DataContext>
+	        <local:MainViewModel />
+		</Window.DataContext>
+		を記述語、 Start/Abort は "その他指定" の "Command"右の■を左クリックし
+		"データバインディング作成"を選び、ダイアログが起動するので
+		"バインドの種類" を "データコンテキスト" にし、パスを "StartCommand"等にした
+		TextBoxは、"共通" の "Text" 
+		右の■を左クリックし
+		"データバインディング作成"を選び、ダイアログが起動するので
+		"バインドの種類" を "データコンテキスト" にし、パスを "CurrentState"にした
+		その後、 
+			<Window.DataContext>
+		        <local:MainViewModel />
+			</Window.DataContext>
+		をコメントアウトした。
+
+以上です。

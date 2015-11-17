@@ -20,3 +20,7 @@
 	AddNew TestService1 : Windows Service Sample Project
 	AddNew TestTcpClient : TcpClient Sample Project
 	AddNew TestTcpSrvSample : TcpListener Sample Project
+	AddNew TestAwaitAsync : async/await Sample Project
+	AddNew TestWPF_Test1_1 : Control to Contorl Biding Test (Slider-TextBox)
+	AddNeq JikkenMVVM_Person : Simple MVVM Project
+	AddNew TestWpfMvvmModelTask : Simple MVVM Project2(Model is Task)

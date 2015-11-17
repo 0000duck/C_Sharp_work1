@@ -1,0 +1,216 @@
+
+Model: 特になし
+View : Mainwindow.xaml
+ViewModel : PersonCommandViewMode
+
+
+●View
+・MainWindow.xaml
+
+<Window x:Class="JikkenMVVM_Person.MainWindow"
+			：＜略＞
+        xmlns:local="clr-namespace:JikkenMVVM_Person"	
+		// ↑
+		// JikkenMVVM_Person の namespace が "local"と言う名前で参照できるようになる
+		//
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">	
+    <Grid>
+        <StackPanel>
+            	：＜略＞
+            <TextBox Text="{Binding FirstName}"/>
+            	：＜略＞
+            <TextBox Text="{Binding LastName}"/>
+            	：＜略＞
+            <TextBox Text="{Binding FullName}"/>
+            	：＜略＞
+            <TextBox Text="{Binding Age}"/>
+            		：＜略＞
+                <Button Command="{Binding IncrementAge}">Age++</Button>
+                <Button Command="{Binding DecrementAge}">Age--</Button>
+         		   	：＜略＞
+        </StackPanel>
+    </Grid>
+</Window>
+
+
+・MainWindow.cs
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            var p = new PersonCommandViewModel()
+            {
+                FirstName = "yama",
+                LastName = "to",
+                Age = 100,
+            };
+
+            this.DataContext = p;	// ViewModel を View に接続
+        }
+    }
+
+
+
+●PersonCommandViewMode (ViewModel)
+				データバインディング
+	View	<--- INotifyPropertyChanged ---- ViewModel <---> Model
+			---- ICommand				---> 
+
+	FirstName/LastName/FullName は それぞれの textBox に Binding してあるので
+	setter で、変更すると 反映される
+	Age は、 ++ボタンが、IncrementAge、--ボタンが DecrementAge に Binding してあるので
+	Increment は RelayCommand() 後、実行時は、 Age++; を処理
+	Decriment は DecrementAge を処理
+
+
+public class PersonCommandViewModel : INotifyPropertyChanged
+    {
+        // View で binding する コマンドMethod定義
+        public ICommand IncrementAge { get; set; }
+        public ICommand DecrementAge { get; set; }
+
+
+		// コンストラクタ
+        public PersonCommandViewModel()
+        {
+            IncrementAge = new RelayCommand(() => { Age++; });
+            DecrementAge = new DecrementAgeCommand(this);
+        }
+
+		// メンバー firstName, lastName, fullName, Age
+        private string firstNameVal;
+        public string FirstName
+        {
+            get { return firstNameVal; }
+            set
+            {
+                firstNameVal = value;
+                NotifyPropertyChanged("FirstName");
+                NotifyPropertyChanged("FullName");
+            }
+        }
+
+        private string lastNameVal;
+        public string LastName
+        {
+            get { return lastNameVal; }
+            set
+            {
+                lastNameVal = value;
+                NotifyPropertyChanged("LastName");
+                NotifyPropertyChanged("FullName");
+            }
+        }
+
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+            set
+            {
+                var names = value.Split(new[] { ' ' });
+                if (names.Length == 2)
+                {
+                    FirstName = names[0];	LastName = names[1];
+                }
+                else
+                {
+                    FirstName = value;		LastName = "";
+                }
+                NotifyPropertyChanged("FullName");
+            }
+        }
+
+        private int ageVal;
+        public int Age
+        {
+            get { return ageVal; }
+            set
+            {
+                ageVal = value;
+                NotifyPropertyChanged("Age");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+    }
+
+
+
+
+    // ViewModel用のコマンド用意
+    public class DecrementAgeCommand : ICommand
+    {
+        private PersonCommandViewModel vm;
+
+        public DecrementAgeCommand(PersonCommandViewModel viewmodel)
+        {
+            vm = viewmodel;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return vm.Age > 0;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            vm.Age--;
+        }
+    }
+
+    // ViewModel用のコマンド用意
+    public class RelayCommand : ICommand
+    {
+        private readonly Action _execute;
+        private readonly Func<bool> _canExecute;
+
+        public event EventHandler CanExecuteChanged;
+
+        public RelayCommand(Action execute) : this(execute, null)
+        {
+        }
+
+        public RelayCommand(Action execute, Func<bool> canExecute)
+        {
+            if (execute == null)
+                throw new ArgumentNullException("execute");
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null ? true : _canExecute();
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute();
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            var handler = CanExecuteChanged;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
+    }
+
+
+}
+
+
