@@ -1,0 +1,64 @@
+﻿<Window x:Class="TestWpfThumb5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpfThumb5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <!--
+    <Window.Resources>
+        <x:ArrayExtension x:Key="Data1" Type="{x:Type local:ComboboxColorData}" >
+            <local:ComboboxColorData ID="1" Name="BkBlue" />
+            <local:ComboboxColorData ID="2" Name="BkLigthBlue" />
+        </x:ArrayExtension>
+    </Window.Resources>
+    -->
+    <DockPanel>
+        <Button Content="追加" DockPanel.Dock="Top" HorizontalAlignment="Center" Click="Button_Click" />
+        <ItemsControl Name="DragList">
+            <!--配置方式(パネル)をカスタマイズ-->
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas></Canvas>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <!--リストアイテムの表示をカスタマイズ-->
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Thumb DragDelta="Thumb_DragDelta" DragStarted="Thumb_DragStarted" MouseRightButtonDown="Thumb_MouseRightButtonDown" >
+                        <Thumb.Template>
+                            <ControlTemplate>
+                                <!--ドラッグ対象のオブジェクトを定義 -->
+                                <Grid Width="100" Height="30">
+                                    <Ellipse Name="daen" Fill="LightBlue" Stroke="Blue" />
+                                    <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <!-- Buttonは張り付いて移動できなかった
+                                    <Button Content="Button" />
+                                    -->
+                                    <ContextMenuService.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="BkBlue" Click="MenuItem_Click" />
+                                        <MenuItem Header="BkLightGreen" Click="MenuItem_Click" />
+                                    </ContextMenu>
+                                    </ContextMenuService.ContextMenu>
+                                    <!-- ComboBoxは張り付いて移動できなかった
+                                    <ComboBox x:Name="ComboBox1" 
+                                    ItemsSource="{Binding Source={StaticResource Data1}}"  
+                                    DisplayMemberPath="Name"  
+                                    SelectedValuePath="ID" />
+                                    -->                                    
+
+                                </Grid>
+                            </ControlTemplate>
+                            
+                        </Thumb.Template>
+                    </Thumb>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+    </DockPanel>
+
+</Window>

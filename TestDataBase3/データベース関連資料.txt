@@ -1,0 +1,212 @@
+
+	VS2010 C# LINQ で データベースをアクセスするために
+	試した方法を以下にまとめます。
+	LINQ を使うため、データベースのDataSetを sdf ファイルで作成しています。
+
+
+●DataSet
+	データベースのデータを一時的にメモリ上に読み込んでおき、
+	プログラムに対してデータの読み書きを行う機能を提供
+	
+
+●ADO.NET
+	.NET Framework を利用して、SQL Server2008 や MicrosoftAccess など様々な
+	種類のデータベース管理システムに接続するためのインターフェイス技術
+	データベースへ接続するための機能やデータを操作するための機能などを
+	オブジェクト化してある。
+
+	データベースアクセスのために、以下のコントロールやコンポーネントがある。
+	
+
+	BindingSource コンポーネント
+		フォーム上に配置されたコントロールとデータベースを接続する機能
+
+	TableAdaptoer
+		データベースのデータ取得やデータの変更を通知するためのコンポーネント
+		DataSet と データベースのテーブル間で通信を行う機能が実装されている。
+		データーベースから返されたテーブルデータを DataSet に格納。
+
+	DataSetコンポーネント
+		データベースのコピーを保持するためのコンポーネント。
+		データベースにアクセスして、データベースのデータをメモリ上に展開。
+		データベースに接続して処理を行うのに比べて、高速な処理ができる。
+
+	BindingNagatorコントロール
+		データの修正や追加、削除などの操作を行うためのユーザーインターフェイスを
+		フォーム上に表示。
+
+
+
+●データベースの作成 ( SQL ServerCompact3.5 の場合。)
+< 枠作成 >
+	データベースを接続する予定の Windowsアプリケーション Form などで C#起動。
+	[表示] → "サーバーエクスプローラー" を選択し、"サーバーエクスプローラー"起動
+	
+	"サーバーエクスプローラー"内 [データ接続] で 右クリックし、"接続の追加"を選択
+		↓
+	"接続の追加" Formが起動するので
+	[変更]を押し、"データソース"覧で "Microsoft SQL Server Compact3.5" 選択して
+	[OK] を押す。
+		↓
+	"接続のプロパティ"の"データベース"で[作成]を押す。
+	"SQL Server Compactデータベースの新規作成" Formが起動
+		↓
+	"新しい SQL Server Compactデータベースの ファイル名の入力"に記入。
+	例：C:\Users\kitt\Document\DataBaseForDataSetTest1
+	照合純情：日本語
+				大文字と小文字区別する。←必要におおじて Check？
+
+	とりあえず、暗号化系は、とりあず、無しで、設定変更はしませんでした。
+	[OK]押して閉じる
+		↓
+	"接続の追加"も [OK]おして閉じる。
+		
+	"サーバーエクスプローラー"の"データ接続"の下に、
+	先に作成したデータベース名が表示される。
+	例："DataBaseForDataSetTest1.sdf"
+		その下に "テーブル"フォルダがあるので、右クリックして
+		"テーブルの作成"を選択。
+		↓
+	"新しいテーブル" Form が起動すうるので、
+	テーブルの各列を入力して作成する。
+	以下例
+	
+	名前：tbl_name_is_test_sdf
+		列名		データ型	サイズ	NULLを許容	一意	主キー
+	CustomerID		int			4		いいえ		いいえ	はい
+	// 上記は、IDを true、IDENTITYシールド=1、IDENTITY増分=1
+	CustomerName	nvarchar	10		いいえ		いいえ	いいえ
+	ZipCode			int			4		いいえ		いいえ	いいえ
+	Address			nvarchar	100		いいえ		いいえ	いいえ
+
+		↓
+	
+< データ作成 >
+	"サーバーエクスプローラー"内
+		"DataBaseForDataSetTest1.sdf"	を閉じて、開くと
+		"テーブル"フォルダに先に作成した テーブル "tbl_name_is_test_sdf"が
+		表示される。
+		"tbl_name_is_test_sdf"を右クリック→"テーブルデータの表示"を選択
+		
+		Form1.cs[デザイナ]と同じ枠に、
+		"C:\Users\kitt\Document\DataBaseForDataSetTest1.sdf"タグが表示されるので
+		ここで、データベースのデータを入力して作成する。
+		(１列目は、自動でNo 降られるので、2列目から入力した。)
+		例
+				CustomerID	CustomerName	ZipCode	Addres
+				1			Asan			181		TokypA
+				2			Bsan			182		TokypB
+				3			Csan			183		TokypC
+				4			Dsan			184		TokypD
+				5			Esan			185		TokypE
+
+		タグの×ボタンを押して、閉じると入力したデータは保存されています。
+		
+
+
+
+●WindowsアプリケーションForm にデータベース接続
+< 前準備 >
+	[データ] → "新しいデータソースの追加" を選択 → 
+	"データソース構成ウィザード" Form が起動するので
+	"アプリケーションのデータの取得元" で "データベース"を選択。
+	"次へ"を押す
+		↓
+	"データベースモデル"の選択" で
+	"使用するデータベースモデルの種類を選択してください。"
+	で "データベース"を選択。
+	"次へ"を押す
+		↓
+	"アプリケーションデータベースへの接続に使用するデータ接続" が
+	先に作成したデータベース
+	"DataBasForDataSetTest1.sdf"になっていることを確認。
+	"次へ"を押す
+		↓
+	"選択接続は、現在のプロジェクトにはないかローカルデータファイルを使用します。
+	　プロジェクトにファイルをコピーして接続を変更しますか？"
+	"はい"を押す
+		↓
+	"接続文字列をアプリケーション構成ファイルに保存する"で
+	独自の名前にして、(例："DBForDtSetTest1_ConnectString")
+	"次へ"を押す。
+		↓
+	"データセット内に指定するデータベース オブジェクト" で
+	"テーブル"の Check し
+	データセット名を入力して 例：MyDataSet1
+	[完了]を押す。
+
+< Formデザインに設定 >
+	"ツールボックス" の "DataSet" をダブルクリック
+		↓
+	"データセットの追加" Form が起動するので
+	"型指定されたデータセット"が 先に作成した データセット名であることを確認。
+	( 例：TestDataBase3.MyDataSet1 )
+	[OK] 押す。
+		↓
+	"Form1.cs[デザイン]" の Form の下に
+	DataSetが追加される。
+	( 例： myDataSet11。醜いので myDataSet1_1 に名前変更した。)
+		↓
+	"ツールボックス" の "BindingSoure" をダブルクリック
+	"Form1.cs[デザイン]" の Form の下に
+	"bindingSoure1"が追加される。
+	これのプロパティで、
+		"DataSource"を 先の DataSet 名にする。
+		(例："myDataSet1_1")
+		"DataMember"を テーブル名にする。
+		(例："tbl_name_is_test_sdf")
+		TableAdapter が "Form1.cs[デザイン]" の Form の下に 自動で追加される。
+		(例："tbl_name_is_test_sdfTableAdapter)
+
+
+
+●アプリ実装
+	先に作成した データベースを取得し、DataGridView に表示させる。
+	DataGridView の Form への追加は通常と同様。
+
+	Load Event で、データベース接続し、すべて表示。
+	Button1で、 ZipCode 182以上の人のみ表示
+
+		private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'myDataSet1_1.tbl_name_is_test_sdf' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.tbl_name_is_test_sdfTableAdapter.Fill(this.myDataSet1_1.tbl_name_is_test_sdf);     // 自動挿入された Code
+            
+            // Database を DataGridViewに接続
+            dataGridView1.DataSource = bindingSource1;
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var query = from rs in myDataSet1_1.tbl_name_is_test_sdf
+                        where rs.ZipCode > 181
+                        orderby rs.CustomerName
+                        select rs;
+            bindingSource1.DataSource = query;
+        }
+
+
+
+	？データの変更しても参照側が反映されない？ →
+		Form1 に追加した DataSet の右上にある 矢印 を
+		クリックし、"データセット デザイナーで編集"を選択
+		xxx.xsd タグが表示されるので 編集したい列名を選択し
+		プロパティで 型などを変更する。
+
+
+●情報の整理
+	データベース：DataBaseForDataSetTest1
+	テーブル：tbl_name_is_test_sdf
+	Formデザイン上：
+		データベース選択で、DataBaseForDataSetTest1.sdf
+		接続名：DBForDtSetTest1_ConnectString
+		DataSet：myDataSet1_1
+		bindingSource：bidingSource1
+			.DataSource：myDataSet1_1
+			.DataMember：tbl_name_is_test_sdf
+
+
+
+
+以上です。

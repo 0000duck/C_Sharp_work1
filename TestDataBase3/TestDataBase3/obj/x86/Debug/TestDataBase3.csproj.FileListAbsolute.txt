@@ -1,0 +1,9 @@
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\bin\Debug\DataBaseForDataSetTest1.sdf
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\bin\Debug\TestDataBase3.exe.config
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\bin\Debug\TestDataBase3.exe
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\bin\Debug\TestDataBase3.pdb
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\obj\x86\Debug\TestDataBase3.Form1.resources
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\obj\x86\Debug\TestDataBase3.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\obj\x86\Debug\TestDataBase3.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\obj\x86\Debug\TestDataBase3.exe
+C:\Users\Public\work\Cシャープ\TestDataBase3\TestDataBase3\obj\x86\Debug\TestDataBase3.pdb

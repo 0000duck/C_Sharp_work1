@@ -1,0 +1,53 @@
+﻿<Window x:Class="TestWpfMutiBind.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpfMutiBind"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" >
+    <!-- d:DataContext="{d:DesignInstance {x:Type local:MyStrAddConv}}" -->
+    
+    <!-- MyStrAddConv を .cs で実装、コンパイル後、デザイナ上で Window 選択
+         "書式" → "デザイン時のDataContext"の設定"を選び
+         → "Desigen Instance"の "TestWpfMultiBin" から "MyStrAddConv"を選択。
+         その後、以下の記述を追加したらエラーなく見えるようになった
+    -->
+    <Window.Resources>
+        <local:MyAddString x:Key="MyStrAddConv"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="PreString" Width="82" Margin="6,8,6,0"/>
+            <TextBox Text="{Binding PreString, UpdateSourceTrigger=PropertyChanged}"
+                     
+                 Width="70" Margin="6,6,6,0"/>
+            <Label Content="AfterString" Width="84" Margin="6,8,6,0"/>
+            <TextBox Text="{Binding AftString, UpdateSourceTrigger=PropertyChanged}"
+                 Width="70" Margin="6,6,6,0"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Width="202" Height="35" Margin="6,6,0,-12"
+               HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource MyStrAddConv}">
+                                <MultiBinding.Bindings>
+                                    <Binding Path="AftString"/>
+                                    <Binding Path="PreString"/>
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+    </Grid>
+</Window>

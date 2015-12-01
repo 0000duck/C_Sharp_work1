@@ -22,5 +22,21 @@
 	AddNew TestTcpSrvSample : TcpListener Sample Project
 	AddNew TestAwaitAsync : async/await Sample Project
 	AddNew TestWPF_Test1_1 : Control to Contorl Biding Test (Slider-TextBox)
-	AddNeq JikkenMVVM_Person : Simple MVVM Project
+	AddNew JikkenMVVM_Person : Simple MVVM Project
 	AddNew TestWpfMvvmModelTask : Simple MVVM Project2(Model is Task)
+	AddNew TestDataBase3  : Linq and DataSet (DataBase:MS Compact3.5)
+	AddNew TestLinqToSql2 : Linq and DataBase (DataBase:MS SQL Server)
+	AddNew TestWpfBtnTemp : Template at Resource File (MauseOver/IsPressed Trriger)
+	AddNew TestWpfBtnEnbBind : Button Enb/Dsb. used INotifyPropertyChange and Binding
+	AddNew TestWpfBtnEnb2 : Button Enb/Dsb. xaml side version.
+	AddNew TestWpfDataTemp: Example Data template. (combobox member data)
+	AddNew TestWpfDataGridBind1 : Example DataGrid Binding
+	AddNew TestWpfMutiBind : Example MultiBinding
+	AddNew TestWpfItemsCnt1 : Example ItemsControl
+	AddNew TestWpfRoutedEv1 : Example RoutedEvent
+	AddNew TestListOrArrayList : Compare List and ArrayList
+	AddNew TestWpfThumb4 : Example Thumb. ( add ContextMenu cs side )
+	AddNew TestWpfThumb5 : Example Thumb. ( add ContextMenu xaml side )
+	AddNew WPF—v‘fŠT—v‚ÆItemsControlŽ‘—¿.xls : document (element of WPF and ItemsControl)
+
+

@@ -1,0 +1,10 @@
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\obj\x86\Debug\TestLinqToSql2.Form1.resources
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\obj\x86\Debug\TestLinqToSql2.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\obj\x86\Debug\TestLinqToSql2.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\bin\Debug\TestDatabase1.mdf
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\bin\Debug\TestDatabase1_log.ldf
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\bin\Debug\TestLinqToSql2.exe.config
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\bin\Debug\TestLinqToSql2.exe
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\bin\Debug\TestLinqToSql2.pdb
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\obj\x86\Debug\TestLinqToSql2.exe
+C:\Users\Public\work\Cシャープ\TestLinqToSql2\TestLinqToSql2\obj\x86\Debug\TestLinqToSql2.pdb
