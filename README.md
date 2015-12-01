@@ -38,5 +38,5 @@
 	AddNew TestWpfThumb4 : Example Thumb. ( add ContextMenu cs side )
 	AddNew TestWpfThumb5 : Example Thumb. ( add ContextMenu xaml side )
 	AddNew WPF—v‘fŠT—v‚ÆItemsControlŽ‘—¿.xls : document (element of WPF and ItemsControl)
-
+	Update	WPF—v‘fŠT—v‚ÆItemsControlŽ‘—¿.xls : add sheets(elements List)
 
