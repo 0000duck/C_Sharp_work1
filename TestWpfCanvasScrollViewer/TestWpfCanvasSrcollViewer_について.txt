@@ -1,0 +1,15 @@
+
+	TestWpfCanvasSrcollViewer について
+
+
+	Canvas に scrollViewer 表示させるのと
+	Slider で Canvas 拡大縮小する Sample Program
+
+
+	ScrollViewer は、Canvasに内包するのでなく、
+	ScrollViewer に Canvas を内包する。 (MainWindow.xaml に記述あり。)
+
+	"Change Canvas Size" ボタンを押すと、Canvas自体の大きさが大きくなるので
+	ScrollBar が現れ、スクロールできるようになる。
+
+	以上です。

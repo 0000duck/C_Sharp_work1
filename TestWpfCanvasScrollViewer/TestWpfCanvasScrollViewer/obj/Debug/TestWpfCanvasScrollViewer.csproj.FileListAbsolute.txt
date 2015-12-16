@@ -1,0 +1,14 @@
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\bin\Debug\TestWpfCanvasScrollViewer.exe.config
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\bin\Debug\TestWpfCanvasScrollViewer.exe
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\bin\Debug\TestWpfCanvasScrollViewer.pdb
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\MainWindow.g.cs
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\App.g.cs
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer_MarkupCompile.cache
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer_MarkupCompile.lref
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\MainWindow.baml
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.g.resources
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.Properties.Resources.resources
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.csproj.GenerateResource.Cache
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.exe
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.pdb
+C:\Users\Public\work\WPF_Samples\TestWpfCanvasScrollViewer\TestWpfCanvasScrollViewer\obj\Debug\TestWpfCanvasScrollViewer.csprojResolveAssemblyReference.cache

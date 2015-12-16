@@ -40,4 +40,4 @@
 	AddNew WPF要素概要とItemsControl資料.xls : document (element of WPF and ItemsControl)
 	Update	WPF要素概要とItemsControl資料.xls : add sheets(elements List)
 	Update TestSndMsg : add WM_COPYDATA send.
-
+	AddNew TestWpfCanvasScrollViewer : Canvasにスクロールバー。CanvasをSliderで拡大縮小。Sample。
