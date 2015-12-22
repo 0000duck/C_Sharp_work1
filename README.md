@@ -41,3 +41,4 @@
 	Update	WPF要素概要とItemsControl資料.xls : add sheets(elements List)
 	Update TestSndMsg : add WM_COPYDATA send.
 	AddNew TestWpfCanvasScrollViewer : Canvasにスクロールバー。CanvasをSliderで拡大縮小。Sample。
+	AddNew TestWpfNameOf : nameof Sample Project
