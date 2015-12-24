@@ -1,0 +1,22 @@
+﻿<Window x:Class="TestWpfMvvmPrism_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpfMvvmPrism_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="179.795" Width="292.466" d:DataContext="{d:DesignInstance {x:Type local:MainWindowViewModel}}">
+    <Grid>
+        <!-- Name xaml -> cs notify -->
+        <TextBlock x:Name="txtBlk_Name" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBox_Name" Text="{Binding Name, UpdateSourceTrigger=LostFocus}" HorizontalAlignment="Left" Height="23" Margin="71,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        
+        <!-- Age cs -> xaml changed -->
+        <TextBlock x:Name="txtBlk_Age" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBox_Age" Text="{Binding Age}" HorizontalAlignment="Left" Height="23" Margin="71,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" />
+
+        <Button x:Name="Btn_IncAge" Command="{Binding IncrementAge}" Content="Age++" HorizontalAlignment="Left" Margin="70,87,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="-2.161,-0.298" />
+        <Button x:Name="Btn_DecAge" Command="{Binding DecrementAge}" Content="Age--" HorizontalAlignment="Left" Margin="133,87,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="-2.161,-0.298"/>
+
+    </Grid>
+</Window>

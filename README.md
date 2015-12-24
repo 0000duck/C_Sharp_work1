@@ -42,3 +42,5 @@
 	Update TestSndMsg : add WM_COPYDATA send.
 	AddNew TestWpfCanvasScrollViewer : Canvasにスクロールバー。CanvasをSliderで拡大縮小。Sample。
 	AddNew TestWpfNameOf : nameof Sample Project
+	AddNew TestWpfMvvmPrism_1 : Prism を使用した WPF MVVM Sample Project。
+
