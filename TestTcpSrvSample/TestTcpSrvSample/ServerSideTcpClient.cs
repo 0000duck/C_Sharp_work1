@@ -24,6 +24,7 @@ namespace TestTcpSrvSample
 
         bool endFlag;                   // true:recieve後、Ack/Nack sendし、使用したObjectを解放した。  
         bool _dispose = false;          // true:Dispose()処理ずみ
+        bool endReqFlag = false;        // true:Read待ち終了
 
         
         Thread clientThread = null;
@@ -71,7 +72,7 @@ namespace TestTcpSrvSample
             //client.Client.Handle.ToInt32();
             mylogger = MyLogger.getInstance();
             //System.Net.ServicePointManager.SetTcpKeepAlive(true, 1000, 5);
-            myClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1000);
+            //myClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1000);
             //System.Net.ServicePointManager.SetTcpKeepAlive(true, 1000, 5);
            
         }
@@ -110,6 +111,8 @@ namespace TestTcpSrvSample
         {
             bool bret;
 
+            endReqFlag = true;
+
             if (clientThread != null)
             {
                 // stream.Read中もあるので、強制停止せず、ServerSideClientThreadFuction()終了を待つ。
@@ -140,17 +143,7 @@ namespace TestTcpSrvSample
 
                     if (rsize == 0)     // 切断された
                     {
-                        if (stream != null)
-                        {
-                            stream.Close();
-                            stream = null;
-                        }
-
-                        if (myClient != null)
-                        {
-                            myClient.Close();
-                            myClient = null;
-                        }
+                        CloseStreamClient();
                         break;
                     }
                     else
@@ -168,8 +161,9 @@ namespace TestTcpSrvSample
                                 string sendData = AnalyzeRcvData(rcvStr);
                                 sendData = sendData + "\r\n";
 
-                                //以下の2行は、強制切断で Client側に切断が伝わるのを
-                                //確認するのに使用した。その後、デバッグを停止。
+                                // 以下の2行は、強制切断で Client側に切断が伝わるのを
+                                // 確認するのに使用した。ここに breakかけて、
+                                // Step実行後、デバッガを停止して確認終了。
                                 //stream.Close();
                                 //myClient.Close();
 
@@ -185,20 +179,49 @@ namespace TestTcpSrvSample
                 }
                 catch (System.IO.IOException ioerr)
                 {
-                    //if ((ioerr.GetType() == typeof(System.Net.Sockets.SocketException)) &&
-                    //    ((ioerr.InnerException as System.Net.Sockets.SocketException).ErrorCode == 10060))
-                    if ( (ioerr.InnerException as System.Net.Sockets.SocketException).ErrorCode == 10060)
+                    // Read待ち終了
+                    if (endReqFlag == true)
+                    {
+                        CloseStreamClient();
+                        break;
+                    }
+                    // ReadTimeOut処理
+                    else if ((ioerr.InnerException as System.Net.Sockets.SocketException).ErrorCode == 10060)
                     {
                         // ReadTimeout なので、再度Timeout時間設定し、再Readへ
                         stream.ReadTimeout = 5000;
+                        Console.WriteLine("ReadTimeout. StartReRead.");
                     }
+                    // 切断等の例外処理
                     else
                     {
-                        throw;  // 例外を投げる。
+                        Console.WriteLine(ioerr.Message);
+                        CloseStreamClient();
+                        break;
                     }
                 }
 
             }   // end of while
+        }
+
+        /**
+         *  @brief  CloseStreamClient
+         *  @return void
+         *  @note   NetworkStream, TcpClient Close
+         */
+        private void CloseStreamClient()
+        {
+            if (stream != null)
+            {
+                stream.Close();
+                stream = null;
+            }
+
+            if (myClient != null)
+            {
+                myClient.Close();
+                myClient = null;
+            }
         }
 
         /**

@@ -43,4 +43,6 @@
 	AddNew TestWpfCanvasScrollViewer : Canvasにスクロールバー。CanvasをSliderで拡大縮小。Sample。
 	AddNew TestWpfNameOf : nameof Sample Project
 	AddNew TestWpfMvvmPrism_1 : Prism を使用した WPF MVVM Sample Project。
+	Change TestTcpSrvSample : Add SetKeepAlive
+	AddNew TestExcept1 : 例外処理 throw Sample
 

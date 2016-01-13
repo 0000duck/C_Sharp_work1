@@ -1,0 +1,8 @@
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\bin\Debug\TestExcept1.exe.config
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\bin\Debug\TestExcept1.exe
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\bin\Debug\TestExcept1.pdb
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\obj\Debug\TestExcept1.Form1.resources
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\obj\Debug\TestExcept1.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\obj\Debug\TestExcept1.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\obj\Debug\TestExcept1.exe
+C:\Users\Public\work\Cシャープ\TestExcept1\TestExcept1\obj\Debug\TestExcept1.pdb

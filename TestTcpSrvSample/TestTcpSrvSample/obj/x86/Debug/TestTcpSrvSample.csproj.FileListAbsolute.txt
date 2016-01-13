@@ -1,0 +1,7 @@
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\bin\Debug\TestTcpSrvSample.exe
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\bin\Debug\TestTcpSrvSample.pdb
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\obj\x86\Debug\TestTcpSrvSample.Form1.resources
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\obj\x86\Debug\TestTcpSrvSample.Properties.Resources.resources
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\obj\x86\Debug\TestTcpSrvSample.csproj.GenerateResource.Cache
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\obj\x86\Debug\TestTcpSrvSample.exe
+C:\Users\Public\work\Cシャープ\TestTcpSrvSample\TestTcpSrvSample\obj\x86\Debug\TestTcpSrvSample.pdb

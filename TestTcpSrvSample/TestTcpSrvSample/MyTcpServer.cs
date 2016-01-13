@@ -41,13 +41,16 @@ namespace TestTcpSrvSample
 
             //System.Net.IPAddress ipAdd = System.Net.IPAddress.Parse(ipadd);
             //server = new TcpListener(ipAdd, portno);
-            server = new TcpListener(portno);
+            server = new TcpListener(System.Net.IPAddress.Any, portno);
+            //server.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1000);
+            SetKeepAlive(server.Server, 1000, 1000);
             try
             {
                 server.Start(queueMax);
             }
             catch (SocketException er)
             {
+                Console.WriteLine("Server start error."+ er.Message);
                 return false;
             }
 
@@ -57,6 +60,28 @@ namespace TestTcpSrvSample
             srvThread.Start();
 
             return true;
+        }
+
+        /**
+         *  @brief      SetKeepAlive
+         *  @param[in]  sock    socket
+         *  @param[in]  int     time
+         *  @param[in]  int     interval
+         *  @return     void
+         *  @note          Socket KeepAliveの設定
+         */
+        private void SetKeepAlive(Socket sock, int time, int interval)
+        {
+            byte[] inValue  = new byte[12];
+            byte[] outValue = new byte[4];
+            inValue  = Enumerable.Repeat<byte>(0x00, 12).ToArray();
+            outValue = Enumerable.Repeat<byte>(0x00,  4).ToArray();
+
+            BitConverter.GetBytes(1).CopyTo(inValue, 0);    // KeepAliveOn/Off
+            BitConverter.GetBytes(time).CopyTo(inValue, 4); // KeepAliveTime
+            BitConverter.GetBytes(interval).CopyTo(inValue, 8); // KeepAliveInterval
+            sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+            sock.IOControl(IOControlCode.KeepAliveValues, inValue, outValue);
         }
 
         /**
@@ -92,10 +117,18 @@ namespace TestTcpSrvSample
                 }
                 if (server.Pending() == true)   // true:Clientが接続してきた
                 {
-                    ServerSideTcpClient srvSideClient = new ServerSideTcpClient();
-                    srvSideClient.setTcpClient(server.AcceptTcpClient());           // Accept待ち
-                    clients.Add(srvSideClient);                                     // Clinetリストに追加
-                    srvSideClient.startProc();                                      // Clientとの通信用スレッド起動
+                    try
+                    {
+                        ServerSideTcpClient srvSideClient = new ServerSideTcpClient();
+                        srvSideClient.setTcpClient(server.AcceptTcpClient());           // Accept待ち
+                        clients.Add(srvSideClient);                                     // Clinetリストに追加
+                        srvSideClient.startProc();                                      // Clientとの通信用スレッド起動
+                    }
+                    catch (System.IO.IOException ioerr)  // 切断検知
+                    {
+                        Console.WriteLine(ioerr.Message);
+                        allClientEndProc();
+                    }
                 }
                 
                 // 終了した ServerSideTcpClient クラス解放
