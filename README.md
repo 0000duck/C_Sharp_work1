@@ -49,4 +49,5 @@
 	AddNew TestMakeExcelFile : Excelデータ作成保存後、グラフを作成しExcel起動
 	AddNew TestNullObject1 : NullObjectパターン Sample Project。
 	AddNew TestPolymorphism1 : ポリモフィズム Sample Project。
+	AddNew TestMvvmRectangle1 : MVVMでのRectangle追加削除 SampleProject
 
