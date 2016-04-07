@@ -51,5 +51,6 @@
 	AddNew TestPolymorphism1 : ポリモフィズム Sample Project。
 	AddNew TestMvvmRectangle1 : MVVMでのRectangle追加削除 SampleProject
 	AddNew TestMvvmRectangle3 : MVVMでのRectangle追加削除 SampleProject ( Canvas上に描画。拡大縮小 )
+	AddNew TestInterpreter : Interpreterパターン SampleProject
 
 
