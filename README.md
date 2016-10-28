@@ -54,3 +54,4 @@
 	AddNew TestInterpreter : Interpreterパターン SampleProject
 	AddNew TestReactiveExtentions : Rxの機能を試した SampleProject
 	AddNew TestReactiveExtensions : Draw Canvas by Mouse. ( used Observable.FromEventPattern )
+	Change TestEvClickRx : Correction MainWindow.xaml.cs (line:43)

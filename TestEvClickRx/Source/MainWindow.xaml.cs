@@ -40,7 +40,7 @@ namespace TestEvClickRx
             InitializeComponent();
 
             // MouseDown偶数回目 Event発生
-            Observable.FromEventPattern(this, "MouseDown").Where((x, index) => (index + 1) % 2 == 0).Subscribe(XmlDataProvider => MessageBox.Show("偶数回目のクリック"));
+            Observable.FromEventPattern(this, "MouseDown").Where((x, index) => (index + 1) % 2 == 0).Subscribe(x => MessageBox.Show("偶数回目のクリック"));
 
 
             // 足される数と足す数をCheck
