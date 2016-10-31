@@ -55,3 +55,4 @@
 	AddNew TestReactiveExtentions : Rx‚Ì‹@”\‚ðŽŽ‚µ‚½ SampleProject
 	AddNew TestReactiveExtensions : Draw Canvas by Mouse. ( used Observable.FromEventPattern )
 	Change TestEvClickRx : Correction MainWindow.xaml.cs (line:43)
+	AddNew TestScheduleImid	:  TestShedule(Immediate etc.)
